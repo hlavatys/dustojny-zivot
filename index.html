@@ -10,6 +10,24 @@
 
   gtag('config', 'AW-18456594131');
 </script>
+
+<!-- Event snippet for S možností volání conversion page -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-18456594131/otjoCMvX14YdENON5eBE',
+      'value': 1.0,
+      'currency': 'CZK',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Důstojné stáří, důstojný život — pomoc seniorům v Plzni a okolí</title>
@@ -388,7 +406,7 @@
       <span class="callbar-claim">Důstojné stáří = <strong>důstojný život</strong></span>
     </div>
     <div class="callbar-row">
-    <a class="phone" href="tel:+420732888546">📞 732 888 546</a>
+    <a class="phone" href="tel:+420732888546" onclick="return gtag_report_conversion('tel:+420732888546');">📞 732 888 546</a>
     <span class="callbar-item callbar-mail">✉️ <a href="mailto:dustojny-zivot@seznam.cz">dustojny-zivot@seznam.cz</a></span>
     <a class="callbar-fb" href="https://www.facebook.com/Dustojnyzivot/" target="_blank" rel="noopener" title="Sledujte nás na Facebooku"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.84c0-2.52 1.5-3.91 3.77-3.91 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.45 2.91h-2.33V22c4.78-.76 8.44-4.92 8.44-9.94Z"/></svg><span>Facebook</span></a>
     </div>
@@ -563,7 +581,7 @@
     <svg class="footer-logo" viewBox="0 0 64 64" fill="none"><path d="M6 30 32 8l26 22" stroke="#C69C4A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M12 27v29h40V27" stroke="#1E3A5F" stroke-width="4" stroke-linejoin="round" fill="none"/><path d="M32,53 C25,47 20,41 20,35 C20,30 24,27 28,29 C30,30 31,32 32,34 C33,32 34,30 36,29 C40,27 44,30 44,35 C44,41 39,47 32,53 Z" fill="#C69C4A"/></svg>
     <h2>Domluvme si nezávaznou konzultaci</h2>
     <p style="color:#C9D3DE;">Probereme vaši situaci osobně, v klidu, bez tlaku na rychlé rozhodnutí.</p>
-    <a class="phone-big" href="tel:+420732888546">732 888 546</a>
+    <a class="phone-big" href="tel:+420732888546" onclick="return gtag_report_conversion('tel:+420732888546');">732 888 546</a>
     <div class="contact-line">✉️ <a href="mailto:dustojny-zivot@seznam.cz">dustojny-zivot@seznam.cz</a></div>
     <div class="contact-line">📍 Plzeň a Plzeňský kraj</div>
     <div class="contact-line"><a class="fb-link" href="https://www.facebook.com/Dustojnyzivot/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.84c0-2.52 1.5-3.91 3.77-3.91 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.45 2.91h-2.33V22c4.78-.76 8.44-4.92 8.44-9.94Z"/></svg><span>Najdete nás také na Facebooku</span></a></div>
