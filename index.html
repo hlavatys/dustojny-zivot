@@ -382,6 +382,25 @@ function gtag_report_conversion(url) {
   }
   footer .signature strong{color:var(--gold-soft);font-size:21px;}
   footer .fine{color:#8FA0B3;font-size:14px;margin-top:28px;}
+  footer .or-divider{display:flex;align-items:center;gap:14px;max-width:360px;margin:26px auto 18px;color:#8FA0B3;font-size:14px;}
+  footer .or-divider::before,footer .or-divider::after{content:"";flex:1;height:1px;background:#3A4E66;}
+  footer .ask-form{max-width:420px;margin:0 auto;text-align:left;}
+  footer .ask-form input,footer .ask-form textarea{
+    width:100%;box-sizing:border-box;font-family:Georgia, serif;font-size:17px;
+    padding:12px 14px;margin-bottom:12px;border-radius:6px;border:1px solid #3A4E66;
+    background:var(--ivory);color:var(--text);
+  }
+  footer .ask-form textarea{min-height:80px;resize:vertical;}
+  footer .ask-form button{
+    width:100%;font-family:Georgia, serif;font-weight:700;font-size:18px;
+    padding:13px 16px;border-radius:6px;border:none;cursor:pointer;
+    background:var(--gold);color:var(--navy-deep);
+  }
+  footer .ask-form button:hover{background:var(--gold-soft);}
+  footer .ask-form button:disabled{opacity:0.6;cursor:default;}
+  footer .ask-form .form-note{font-size:14px;color:#8FA0B3;margin-top:10px;text-align:center;}
+  footer .ask-success{display:none;max-width:420px;margin:0 auto;background:#1E3A2E;border:1px solid #2E5C44;border-radius:8px;padding:18px;color:var(--ivory);font-size:17px;}
+  footer .ask-error{display:none;max-width:420px;margin:10px auto 0;color:#E4A8A8;font-size:15px;text-align:center;}
 
   @media (max-width: 820px){
     .claim{font-size:36px;}
@@ -401,13 +420,10 @@ function gtag_report_conversion(url) {
 
 <div class="callbar">
   <div class="wrap">
-    <div class="callbar-brand callbar-row">
-      <svg viewBox="0 0 64 64" fill="none"><path d="M6 30 32 8l26 22" stroke="#C69C4A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M12 27v29h40V27" stroke="#FFFDF8" stroke-width="4" stroke-linejoin="round" fill="none"/><path d="M32,53 C25,47 20,41 20,35 C20,30 24,27 28,29 C30,30 31,32 32,34 C33,32 34,30 36,29 C40,27 44,30 44,35 C44,41 39,47 32,53 Z" fill="#C69C4A"/></svg>
-      <span class="callbar-claim">Důstojné stáří = <strong>důstojný život</strong></span>
-    </div>
     <div class="callbar-row">
     <a class="phone" href="tel:+420732888546" onclick="return gtag_report_conversion('tel:+420732888546');">📞 732 888 546</a>
     <span class="callbar-item callbar-mail">✉️ <a href="mailto:dustojny-zivot@seznam.cz">dustojny-zivot@seznam.cz</a></span>
+    <a class="callbar-item" href="#zeptejte-se" style="color:var(--ivory);text-decoration:underline;">✍️ Zeptejte se</a>
     <a class="callbar-fb" href="https://www.facebook.com/Dustojnyzivot/" target="_blank" rel="noopener" title="Sledujte nás na Facebooku"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.84c0-2.52 1.5-3.91 3.77-3.91 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.45 2.91h-2.33V22c4.78-.76 8.44-4.92 8.44-9.94Z"/></svg><span>Facebook</span></a>
     </div>
   </div>
@@ -578,7 +594,6 @@ function gtag_report_conversion(url) {
 
 <footer id="kontakt">
   <div class="wrap">
-    <svg class="footer-logo" viewBox="0 0 64 64" fill="none"><path d="M6 30 32 8l26 22" stroke="#C69C4A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M12 27v29h40V27" stroke="#1E3A5F" stroke-width="4" stroke-linejoin="round" fill="none"/><path d="M32,53 C25,47 20,41 20,35 C20,30 24,27 28,29 C30,30 31,32 32,34 C33,32 34,30 36,29 C40,27 44,30 44,35 C44,41 39,47 32,53 Z" fill="#C69C4A"/></svg>
     <h2>Domluvme si nezávaznou konzultaci</h2>
     <p style="color:#C9D3DE;">Probereme vaši situaci osobně, v klidu, bez tlaku na rychlé rozhodnutí.</p>
     <a class="phone-big" href="tel:+420732888546" onclick="return gtag_report_conversion('tel:+420732888546');">732 888 546</a>
@@ -586,6 +601,18 @@ function gtag_report_conversion(url) {
     <div class="contact-line">📍 Plzeň a Plzeňský kraj</div>
     <div class="contact-line"><a class="fb-link" href="https://www.facebook.com/Dustojnyzivot/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.84c0-2.52 1.5-3.91 3.77-3.91 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.45 2.91h-2.33V22c4.78-.76 8.44-4.92 8.44-9.94Z"/></svg><span>Najdete nás také na Facebooku</span></a></div>
 
+    <div id="zeptejte-se" class="or-divider">nebo nám napište</div>
+
+    <form id="ask-form" class="ask-form" action="https://formspree.io/f/mrpppdvr" method="POST">
+      <input type="hidden" name="_subject" value="Nová poptávka z webu Důstojný život">
+      <input type="text" name="Jméno" placeholder="Jméno a příjmení" required>
+      <input type="text" name="Telefon nebo e-mail" placeholder="Telefon nebo e-mail" required>
+      <textarea name="Zpráva" placeholder="Napište, co vás zajímá, nebo nechte prázdné a ozveme se sami"></textarea>
+      <button type="submit">Ozvěte se mi</button>
+      <div class="form-note">Žádné odesílání vašich údajů dál bez souhlasu, viz GDPR níže.</div>
+    </form>
+    <div id="ask-success" class="ask-success">Děkujeme, vaši zprávu jsme přijali. Ozveme se vám co nejdřív.</div>
+    <div id="ask-error" class="ask-error">Něco se nepovedlo, zkuste to prosím znovu, nebo nám raději zavolejte či napište na e-mail výše.</div>
 
     <div class="fine">Důstojné stáří, důstojný život.<br>Prodej nemovitosti s právem doživotního bydlení. Plzeň a Plzeňský kraj.</div>
 
@@ -597,6 +624,43 @@ function gtag_report_conversion(url) {
 
 <script data-goatcounter="https://hlavatys.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
+
+<script>
+(function(){
+  var form = document.getElementById('ask-form');
+  var success = document.getElementById('ask-success');
+  var error = document.getElementById('ask-error');
+  if(!form) return;
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    error.style.display = 'none';
+    var btn = form.querySelector('button');
+    btn.disabled = true;
+    btn.textContent = 'Odesílám...';
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: {'Accept': 'application/json'}
+    }).then(function(response){
+      if(response.ok){
+        form.style.display = 'none';
+        success.style.display = 'block';
+        // TODO: až založíš v Google Ads novou konverzní akci za formulář,
+        // dej sem její conversion label místo XXXXXXXXXXX a odkomentuj:
+        // gtag('event', 'conversion', {'send_to': 'AW-18456594131/XXXXXXXXXXX'});
+      } else {
+        error.style.display = 'block';
+        btn.disabled = false;
+        btn.textContent = 'Ozvěte se mi';
+      }
+    }).catch(function(){
+      error.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = 'Ozvěte se mi';
+    });
+  });
+})();
+</script>
 
 </body>
 </html>
