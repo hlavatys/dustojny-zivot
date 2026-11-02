@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Verze webu: 1.24 — přidán druhý Google Ads tag (AW-1006701898) a sdílecí tlačítka (SMS, e-mail, kontakt) -->
 <html lang="cs">
 <head>
 <!-- Google tag (gtag.js) -->
@@ -9,9 +10,10 @@
   gtag('js', new Date());
 
   gtag('config', 'AW-18456594131');
+  gtag('config', 'AW-1006701898');
 </script>
 
-<!-- Event snippet for S možností volání conversion page -->
+<!-- Event snippet pro konverzi (telefonát), hlásí do obou Google Ads účtů najednou -->
 <script>
 function gtag_report_conversion(url) {
   var callback = function () {
@@ -20,7 +22,7 @@ function gtag_report_conversion(url) {
     }
   };
   gtag('event', 'conversion', {
-      'send_to': 'AW-18456594131/otjoCMvX14YdENON5eBE',
+      'send_to': ['AW-18456594131/otjoCMvX14YdENON5eBE', 'AW-1006701898/TDK7CKyT0LAdEMqahOAD'],
       'value': 1.0,
       'currency': 'CZK',
       'event_callback': callback
@@ -401,6 +403,16 @@ function gtag_report_conversion(url) {
   footer .ask-form .form-note{font-size:14px;color:#8FA0B3;margin-top:10px;text-align:center;}
   footer .ask-success{display:none;max-width:420px;margin:0 auto;background:#1E3A2E;border:1px solid #2E5C44;border-radius:8px;padding:18px;color:var(--ivory);font-size:17px;}
   footer .ask-error{display:none;max-width:420px;margin:10px auto 0;color:#E4A8A8;font-size:15px;text-align:center;}
+  footer .share-row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:22px auto 0;max-width:480px;}
+  footer .share-row a, footer .share-row button{
+    display:inline-flex;align-items:center;gap:6px;
+    font-family:Georgia, serif;font-size:15px;
+    color:var(--ivory);text-decoration:none;
+    background:rgba(255,255,255,0.08);
+    border:1px solid #3A4E66;border-radius:20px;
+    padding:8px 14px;cursor:pointer;
+  }
+  footer .share-row a:hover, footer .share-row button:hover{background:rgba(255,255,255,0.16);color:var(--gold-soft);}
 
   @media (max-width: 820px){
     .claim{font-size:36px;}
@@ -601,6 +613,13 @@ function gtag_report_conversion(url) {
     <div class="contact-line">📍 Plzeň a Plzeňský kraj</div>
     <div class="contact-line"><a class="fb-link" href="https://www.facebook.com/Dustojnyzivot/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.84c0-2.52 1.5-3.91 3.77-3.91 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.45 2.91h-2.33V22c4.78-.76 8.44-4.92 8.44-9.94Z"/></svg><span>Najdete nás také na Facebooku</span></a></div>
 
+    <div class="share-row">
+      <a href="sms:?body=Mrknete%20na%20tenhle%20web%2C%20muze%20se%20vam%20hodit%3A%20https%3A%2F%2Fdustojny-zivot.cz%2F">📲 Poslat SMS</a>
+      <a href="mailto:?subject=Tip%20pro%20vas%3A%20Dustojny%20zivot&body=Mrknete%20na%20tenhle%20web%2C%20muze%20se%20vam%20hodit%3A%20https%3A%2F%2Fdustojny-zivot.cz%2F">💌 Poslat e-mailem</a>
+      <a href="kontakt.vcf" download>📇 Uložit kontakt</a>
+      <button type="button" id="share-btn">🔗 Sdílet</button>
+    </div>
+
     <div id="zeptejte-se" class="or-divider">nebo nám napište</div>
 
     <form id="ask-form" class="ask-form" action="https://formspree.io/f/mrpppdvr" method="POST">
@@ -658,6 +677,28 @@ function gtag_report_conversion(url) {
       btn.disabled = false;
       btn.textContent = 'Ozvěte se mi';
     });
+  });
+})();
+</script>
+
+<script>
+(function(){
+  var btn = document.getElementById('share-btn');
+  if(!btn) return;
+  btn.addEventListener('click', function(){
+    var shareData = {
+      title: 'Důstojný život',
+      text: 'Mrkněte na tenhle web, může se vám hodit.',
+      url: 'https://dustojny-zivot.cz/'
+    };
+    if (navigator.share) {
+      navigator.share(shareData).catch(function(){});
+    } else if (navigator.clipboard) {
+      navigator.clipboard.writeText(shareData.url);
+      alert('Odkaz zkopírován do schránky.');
+    } else {
+      prompt('Zkopírujte si odkaz:', shareData.url);
+    }
   });
 })();
 </script>
